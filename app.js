@@ -21,6 +21,11 @@ function addingTodo(x){
     li.innerHTML = `${x}  <span class = "remove-btn">x</span>`;
     li.className='todo-item'
     console.log(li)
+
+    li.addEventListener('click', function(){
+        li.classList.toggle('done')
+    })
+
     // document.querySelector('.todos-container').appendChild(li);
     li.querySelector('.remove-btn').addEventListener('click', function(){
         console.log('ok');

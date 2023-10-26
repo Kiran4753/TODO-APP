@@ -38,7 +38,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: red;
 }
 
 .input-container .todo-input{
@@ -53,6 +52,9 @@ body{
 .input-container .add-btn{
     height: 100%;
     width: 15%;
+    outline: none;
+    border: none;
+    background-color: #0284c7;
 }
 
 .container .todos-container{
@@ -71,11 +73,15 @@ body{
 
 .todo-item{
     list-style: none;
-    background-color: green;
+    background-color: #7dd3fc;
     margin-bottom: 10px;
     padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     user-select: none;
+}
+
+.done{
+    text-decoration: line-through;
 }
