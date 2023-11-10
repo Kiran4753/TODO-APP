@@ -6,17 +6,16 @@ const container = document.querySelector('.todos-container')
 let getTodoValue;
 
 addBtn.addEventListener('click', function(){
-    console.log(addTodo.value);
     getTodoValue = addTodo.value;
     addTodo.value = "";
     addingTodo(getTodoValue)
 
 })
 
-function addingTodo(x){
+function addingTodo(item){
     let li = document.createElement('li');
     li.innerHTML = `
-        <div class="todo-item">${x}</div>
+        <div class="todo-item">${item}</div>
         <button class="delete-btn">❌</button>`;
 
     li.className = 'todo-item'
