@@ -1,5 +1,7 @@
 let addTodo = document.querySelector('.todo-input');
 const addBtn = document.querySelector('.add-btn');
+const container = document.querySelector('.todos-container')
+
 
 let getTodoValue;
 
@@ -8,30 +10,24 @@ addBtn.addEventListener('click', function(){
     getTodoValue = addTodo.value;
     addTodo.value = "";
     addingTodo(getTodoValue)
-    // let li = document.createElement('li');
-    // li.innerHTML = `${getTodoValue}  <span class = "remove-btn">x</span>`;
-    // li.className='todo-item'
-    // console.log(li)
-    //  document.querySelector('.todos-container').appendChild(li)
 
 })
 
 function addingTodo(x){
     let li = document.createElement('li');
-    li.innerHTML = `${x}  <span class = "remove-btn">x</span>`;
-    li.className='todo-item'
-    console.log(li)
+    li.innerHTML = `
+        <div class="todo-item">${x}</div>
+        <button class="delete-btn">❌</button>`;
+
+    li.className = 'todo-item'
 
     li.addEventListener('click', function(){
-        li.classList.toggle('done')
+        li.children[0].classList.toggle('done')
     })
 
-    // document.querySelector('.todos-container').appendChild(li);
-    li.querySelector('.remove-btn').addEventListener('click', function(){
-        console.log('ok');
+    li.querySelector('.delete-btn').addEventListener('click', function(){
         li.remove()
     })
 
-    document.querySelector('.todos-container').appendChild(li);
-
+    container.children[0].append(li);
 }
